@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-title: Transducers are cool
-date: 2016-12-17T15:04:10.000Z
+title: More efficient .js with transducers
+date: 2019-2-1T15:04:10.000Z
 description: They transform collections of data more efficiently.
 tags:
   - functional programming
@@ -11,9 +11,10 @@ tags:
   - reduce
   - javascript
 ---
+
 Transducers are a functional technique for a more reusable way of executing multiple operations on a single values in a collection.
 
-The idea behind executing multiple operations on a single element at a time is that 
+The idea behind executing multiple operations on a single element at a time is that
 
 rather than mapping over and array `3` times and performing a `single operation` each time, a transducer will map over the array `1` time and apply all `three operations` on each array element.
 
