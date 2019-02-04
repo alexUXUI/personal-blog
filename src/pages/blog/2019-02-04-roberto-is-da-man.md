@@ -7,3 +7,7 @@ tags:
   - roberto
 ---
 great code
+
+```
+var code = 42
+```
