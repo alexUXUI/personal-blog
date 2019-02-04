@@ -28,32 +28,24 @@ It's because transducers are better than map, filter, and reduce when it comes t
     .map(divideByFour)
 ```
 
-This `.chain` syntax sure is readable and friendly on the eyes, but as with some FP techniques, there are some performance concerns about doing it this way. 
+This `.chain` syntax is readable and friendly on the eyes, but there are some performance concerns about doing it this way. 
 
 What's the problem?
 
-The problem is that every time we use `.map` in the example above, we are creating a new copy of the `data` array. 
+The problem is that every time we use `.map` in the example above, we create a new copy of the `data` array. 
 
-Given an input of `[1,2,3]` in the example program above, three new arrays are being created `[2,4,6]`, `[6,12,24]` and `[1.5, 3, 6]
+Given an input of `[1,2,3]` in the example program above, three new arrays would be created `[2,4,6]`, `[6,12,24]` and `[1.5, 3, 6]`. Now, imagine if that array was 10k items long. 
 
+Transducers to the rescue!
 
-iterating over a collection and applying a transform function, which is composed of serval operations, one each element in the collection.
+Transducers solve the memory problem of 3 arrays by only iterating over the collection one time, and running multiple functions on each item. Rather than iterating over the collection three times, only  running one function on each item.
 
-more reusable way of executing multiple operations on a single values in a collection.
+How does the transducer run more than one function and still be reusable? 
 
-The idea behind executing multiple operations on a single element at a time is that
+Transducers use a transform function, which is composed of serval operations, on each element in the collection. This is sometimes called xform.
 
-rather than mapping over and array `3` times and performing a `single operation` each time, a transducer will map over the array `1` time and apply all `three operations` on each array element.
+In summary:
 
-Pretty cool, huh?
-
-Your program will be more memory efficient as well because with the .chain syntax of .map, .filter and .reduce, javascript must return a new copy of the array in an intermediary collection.
-
-
-
-
-But with transducers, only one new collection is created.
-
-Basically, Transducers are a functional technique for transforming a collection of data.  
+Transducers are a functional technique for transforming a collection of data.  
 
 >This collection of data can be any functor data type. A functor is a data type that implements `.map`. Array's are functors: `[1,2,3].map(console.log)`.
