@@ -17,16 +17,22 @@ How does it work?
 
 A transducer iterates through a collection of data once and runs multiple functions on each item. 
 
+A regular series of map functions works like this
+
+
+
 In JavaScript, we already have functional techniques for iterating over arrays and running multiple functions on each item; map, filter and reduce. Why do we need to use a transducer?
 
 It's because transducers are better than map, filter, and reduce when it comes to running more than one computation on a collection of data, which is a common use-case and the following code snippet probably looks familiar:
 
-```
+
+```javascript
   data
     .map(multiplyByTwo)
     .map(multiplyByThree)
     .map(divideByFour)
 ```
+
 
 This `.chain` syntax is readable and friendly on the eyes, but there are some performance concerns about doing it this way. 
 
