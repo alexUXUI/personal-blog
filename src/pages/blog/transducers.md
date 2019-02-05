@@ -68,34 +68,35 @@ A transducer iterates over a collection, runs multiple computations on each item
 
 Notice how there are only two arrays in the gif above? 
 
-No intermediary arrays solves our space complexity issue ↔️✅
+No intermediary arrays solves our space complexity issue ↔️
 
 See how each item goes through every function (yellow arrow) one by one, rather than the program to looping over the data three times?
 
-One iteration (rather than three) reduces the time complexity of the algorithm by two thirds ⏰✅
+One iteration (rather than three) reduces the time complexity of the algorithm by two thirds ⏰
 
 ## Transducer Implementation 
 
-#### Transducers have 4 parts:
+#### Transducers have 4 parts
 
-1) Main function 🔁:
+1) Main function:
 Contains all the computations your program will perform on each item in the collection of data 
 
 
-2) Final function 🏁: _is_ the reducing function. It receives a new item once an item has been processed by the computations the Main function 🔁. The final function then takes the resulting item and adds it to the output of the transducer.
+2) Final function: _is_ the reducing function. It receives a new item once an item has been processed by the computations the Main function. The final function then takes the resulting item and adds it to the output of the transducer.
 
 
-3) Seed data 🌱: Used to initialize the output of the transducer. It works just like the array in the following example: `.reduce((acc, val) => { return acc.concat(val) }, [])`
+3) Seed data: Used to initialize the output of the transducer. It works just like the array in the following example: `.reduce((acc, val) => { return acc.concat(val) }, [])`
 
 
-4) Input Data 📦: any collection of data (that implements map).
-
-Each of these four parts will be passed as arguments to our Transducer Function.
+4) Input Data: any collection of data (that implements map).
 
 #### Transducer Function
 
-Our Transducer function signature will look like this:
+Each of the four transducer parts described above will be passed as arguments to the Transducer function:
 
 `Transducer(Main, Final, Seed, Input)`
 
+now that we know how to use and what each part of the transducer is, let's see what goes into each part, and 
+
+#### Implementing each part
 
