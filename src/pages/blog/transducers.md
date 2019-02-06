@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: 'Performant Data Transformation with Transducers '
 date: 2019-02-01T15:04:10.000Z
-description: A conceptual introduction in JavaScript
+description: _
 tags:
   - functional programming
   - tranduce
@@ -11,8 +11,6 @@ tags:
   - reduce
   - javascript
 ---
-> Transduce means “to change over, convert”. 
-
 In software development, a transducer is a performant functional programming technique for data processing and transformation. 
 
 **What does it do?**
@@ -58,7 +56,7 @@ Let's improve this by:
 
 Just to re-cap: Our goal is to iterate over a collection one time, run multiple functions on each item in the collection, and return a new result - without using intermediary collections.
 
-A transducer accomplishes our goal within the time and space constraints. ⏰↔️
+A transducer accomplishes our goal within the time and space constraints.
 
 **How does a transducer work?**
 
@@ -99,4 +97,42 @@ Each of the four transducer parts described above will be passed as arguments to
 now that we know how to use and what each part of the transducer is, let's see what goes into each part, and 
 
 #### Implementing each part
+
+The Main Function:
+
+the main function is a composition of the functions you want the transducer to run on each item in the collection.
+
+Function composition is when the output of one function is the input of another. Composite functions can be described as `f(g(x))`, where the input of `f` is the output of `g(x)`.
+
+Here's an example of function composition:
+```
+const composeTwo = (f, g) => (...x) => {
+  return a(b(...x))
+}
+```
+
+
+In the example above, `x` is each item in the collection of data.
+
+We will demonstrate this and how the main function is implemented here:
+```
+const composeTwo = (f, g) => (...x) => {
+  return a(b(...x))
+}
+```
+
+```
+const sumOne = x => x + 1
+const timesTwo = x => x * 2
+
+const mainFunction = composeTwo(
+  sumOne,
+  timesTwo
+)
+
+mainFunction(10)
+```
+ 
+
+
 
