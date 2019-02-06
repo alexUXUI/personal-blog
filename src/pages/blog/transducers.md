@@ -21,7 +21,7 @@ A transducer iterates over a collection of data and returns a new result.
 
 Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.reduce`.
 
-```javascript
+```
 [1,2,3]
   .map(timesTwo)
   .filter(isOdd)
