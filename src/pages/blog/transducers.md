@@ -11,13 +11,7 @@ tags:
   - reduce
   - javascript
 ---
-In software development, a transducer is a performant functional programming technique for data transformation. 
-
-**What does it do?**
-
-A transducer iterates over a collection of data and returns a new result.
-
-Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.reduce`.
+In software development, a transducer is a performant functional programming technique for data transformation. A transducer iterates over a collection of data and returns a new result. Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.reduce`.
 
 ```
 
@@ -28,9 +22,7 @@ Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.red
 
 ```
 
-**Why do we need to do this differently?**
-
-This approach is _not_ as performant as it could be. A series of functions, like the example above, works like this:
+This approach, however, is not as performant as it could be. In this post we will talk about the problems with this approach and how transducers can improve them. A series of functions, like the example above, works like this:a
 
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*mJicJiOZT4M9jwv6kMkwRg.gif)
 
@@ -109,19 +101,13 @@ Function composition is when the output of one function is the input of another.
 Here's an example of function composition:
 ```
 const composeTwo = (f, g) => (...x) => {
-  return a(b(...x))
+  return f(g(...x))
 }
 ```
-
 
 In the example above, `x` is each item in the collection of data.
 
 We will demonstrate this and how the main function is implemented here:
-```
-const composeTwo = (f, g) => (...x) => {
-  return a(b(...x))
-}
-```
 
 ```
 const sumOne = x => x + 1
