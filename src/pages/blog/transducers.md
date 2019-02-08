@@ -11,7 +11,7 @@ tags:
   - reduce
   - javascript
 ---
-In software development, a transducer is a performant functional programming technique for data transformation. A transducer iterates over a collection of data and returns a new result. Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.reduce`.
+In software development, a transducer is a performant technique for data transformation. A transducer iterates over a collection of data and returns a new result. Often times, in javascript, we accomplish this with `.map`, `.filter`, and `.reduce`.
 
 ```
 
@@ -22,7 +22,7 @@ In software development, a transducer is a performant functional programming tec
 
 ```
 
-This approach, however, is not as performant as it could be. In this post we will talk about the problems with this approach and how transducers can improve them. A series of functions, like the example above, works like this:a
+This approach, however, is not as performant as it could be. In this post we will talk about the problems with this approach and how transducers can improve them. A series of functions, like the example above, works like this:
 
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*mJicJiOZT4M9jwv6kMkwRg.gif)
 
@@ -47,24 +47,20 @@ Let's improve these problems by:
 
 Our goal, then, is to:
 1) Iterate over a collection one time 
-2) Run multiple functions on each item in the collection
-3) return a new result  without using intermediary collections.
+2) Run multiple functions on each item
+3) Return a new result  without using intermediary collections.
 
-This post aims to show you how a transducer accomplishes our goal within the time and space constraints.
+The rest of this post aims to show you how a transducer accomplishes our goal within the specified time and space constraints.
 
 **How does a transducer work?**
 
-A transducer iterates over a collection, runs multiple computations on each item (yellow arrows below), and returns a result. In addition, a transducer only iterates over a collection one time and does _not_ create intermediary collections.
+A transducer iterates over a collection one time and does _not_ create intermediary collections. It iterates one time by running every data transformation on each item as it iterates.
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*rEOyWd0MTPv_NZvzDaFbkA.gif)
 
-Notice how there are only two arrays in the gif above? 
+Notice how there are only two collections in the example transducer above? No intermediary arrays solves our space complexity issue ↔️
 
-No intermediary arrays solves our space complexity issue ↔️
-
-See how each item goes through every function (yellow arrow) one by one, rather than the program to looping over the data three times?
-
-One iteration (rather than three) reduces the time complexity of the algorithm by two thirds ⏰
+See how each item goes through every function yellow arrow one by one, rather than the program to looping over the data three times? One iteration, rather than three, reduces the time complexity of the algorithm by two thirds ⏰
 
 ## Transducer Implementation 
 
@@ -96,7 +92,7 @@ The Main Function:
 
 the main function is a composition of the functions you want the transducer to run on each item in the collection.
 
-Function composition is when the output of one function is the input of another. Composite functions can be described as `f(g(x))`, where the input of `f` is the output of `g(x)`.
+Function composition is when the output of one function is the input of another. Composite functions can be described as `f(g(x))`, where the output of  `g(x)` is the output of `f`.
 
 Here's an example of function composition:
 ```
@@ -118,7 +114,7 @@ const mainFunction = composeTwo(
   timesTwo
 )
 
-mainFunction(10)
+mainFunction(10) // 21
 ```
  
 
