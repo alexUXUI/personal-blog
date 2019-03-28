@@ -24,8 +24,6 @@ In software development, a transducer is a performant technique for data transfo
 
 This approach, however, is not as performant as it could be. In this post we will talk about the problems with this approach and how transducers can improve them. A series of functions, like the example above, works like this:
 
-![alt text](https://cdn-images-1.medium.com/max/1600/1*mJicJiOZT4M9jwv6kMkwRg.gif)
-
 The yellow arrows are functions, the angle brackets are collections, and the red lines are items. Notice how each function needs to process all three items in the collection before the next function is called?
 
 This sequential behavior _is_ the bottle-neck of the program. The map, filter, and reduce approach iterates 3 times and generates 4 collections.
@@ -35,7 +33,6 @@ This sequential behavior _is_ the bottle-neck of the program. The map, filter, a
 Let's address the two main problems with the example program.
 
 1) Space complexity of 4 Collections ↔️. There's an input collection, output collection, and two intermediary collections in the gif above. 
-
 
 2) Time Complexity of 3 iterations ⏰. The program iterates over the collection three times. Once with map, once with filter, and once with reduce
 
@@ -55,8 +52,6 @@ The rest of this post aims to show you how a transducer accomplishes our goal wi
 **How does a transducer work?**
 
 A transducer iterates over a collection one time and does _not_ create intermediary collections. It iterates one time by running every data transformation on each item as it iterates.
-
-![alt text](https://cdn-images-1.medium.com/max/800/1*rEOyWd0MTPv_NZvzDaFbkA.gif)
 
 Notice how there are only two collections in the example transducer above? No intermediary arrays solves our space complexity issue ↔️
 
