@@ -7,27 +7,32 @@ tags:
   - micro frontend
 ---
 
-## What is a Micro frontend?
+## What?
 
 It’s a UI built with micro services. Micro frontends are also called composite UIs.
 
-(Insert graphic)
+![alt text](https://micro-frontends.org/ressources/diagrams/organisational/verticals-headline.png)
 
-### Amazon Example: 
+#### Amazon Example: 
 
-Ever notice how Amazon.com’s website has a slightly different look and feel across different parts? It's because each part is a separate application, built by different team, using a any given technology. 
+Ever notice how Amazon.com’s website has a slightly different look and feel across different parts? It's because each part is a separate application, built by different team, using any given technology. 
 
-All of these micro applications come together to create a micro front end, also called a composite UI.
 
-### Why?
+## Why?
 
-Front end code bases can scale:
+Scale Business:
+
+- Easier feature adoption
+- Clearer lines of responsibility
+- More flexible technology 
+
+Scale frontend code bases:
 
 - Less coupling (not everything together)
 - More reuse (more things using one thing)
 - Can have as many web apps as you want
 
-Front end teams can also scale:
+Scale frontend teams:
 
 - Smaller and more focused teams
 - Not everyone working on one code base
@@ -36,13 +41,7 @@ Front end teams can also scale:
 - Teams can choose what ever technology they want
 - Teams have more ownership due to clearer responsibility
 
-Business can scale as well:
-
-- Easier feature adoption
-- Clearer lines of responsibility
-- More flexible technology 
-
-When?
+## When?
 
 Micro front end Architectures are a good fit for companies with front end applications that need to integrate, talk to, and share data with one another.
 
@@ -59,16 +58,16 @@ How?
 There are many ways to solve this problem, yet few established solutions. 
 
 - A common approach is to route a user to a different website. For example: products.amazon.com might route to purchase.amazon.com, using a POST request to share the users shopping cart. 
-	
-	(insert diagram)
+
+![alt text](https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png)
 
 - Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
 
-	(insert diagram)
+![alt text](https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png)
 
 - Use SSR to pull micro app code into a single index.html, depending on a URL route
 
-	(insert diagram)
+![alt text](https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png)
 
 The approach we decided on was the third approach, to use SSR to append different micro apps into the same DOM.
 
