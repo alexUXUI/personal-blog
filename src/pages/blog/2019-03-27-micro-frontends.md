@@ -10,30 +10,12 @@ tags:
 
 A micro frontend is UI composed of microservices. Each microservice encapsulates a domain of business functionality and is a self-contained web application made of html, css, and js. While being independent, microservices work together to create a single UI. (breadth and depth)
 
-> #### Example:
-Amazon uses a micro frontend to split up it's various web applications. Products page, wish list, and shopping cart are all independent web applications Amazon assembles into a composite UI.
+#### Example:
+Amazon uses a micro frontend to split up it's various web applications. Products, wish list, and shopping cart are all independent web applications Amazon assembles into a composite UI.
 
 ## Why use micro frontends?
 
-Business:
-
-* Easier feature adoption
-* Clearer lines of responsibility
-* More flexible, less buggy tech 
-
-Code bases:
-
-* Code reuse
-* Scaling number of code bases
-
-Teams:
-
-* Smaller-focused teams
-* Faster development
-* Less risk
-* Technology agnostic
-* Increased ownership
-
+Businesses leveraging a micro frontend becomes more nimble due to less interdependence between teams, and the added flexibility allows for quicker feature iteration. Code quality improves because more code is reused. Less code makes apps easier to maintain, and add durability to the overall UI. Teams get smaller and faster. Each team can also choose their technology.
 
 ## When to use micro frontends?
 
@@ -41,16 +23,16 @@ Micro front end architectures are a good fit for developers with a big frontend 
 
 ## Who should use micro frontends?
 
-You and your team! Micro frontends are great place to give back to the tech community because there is not a enough people sharing their experiences in solving this common problem.
+You and your team! Micro frontends are great place to give back to the tech. community because there is not a enough people sharing their experiences with solving this common problem.
 
 ## How to implement a micro frontend:
 
 There are many ways to solve this problem, yet few established solutions. 
 
-##### Route a user between websites:
-One hypothetical example would be that `products.amazon.com` might route to `purchase.amazon.com`, using a `POST` request to share the users shopping cart. 
+##### Route between websites:
+One hypothetical micro frontend implementation would be for one website to route to a totally different website. For example: `products.amazon.com` might route a user to `purchase.amazon.com`, using a `POST` request to share the shopping cart. 
 
-![alt text](https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png)
+<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example"/>
 
 * Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
 
