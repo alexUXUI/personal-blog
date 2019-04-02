@@ -8,11 +8,10 @@ tags:
 ---
 ## What is a micro frontend?
 
-A micro frontend is UI composed of microservices. Microservices encapsulate a specific domain of business functionality and each microservice is a self-contained web application made of html, css, and js. While being self-contained, microservices also work together to create a composite UI. (breadth and depth)
+A micro frontend is UI composed of microservices. Each microservice encapsulates a domain of business functionality and is a self-contained web application made of html, css, and js. While being independent, microservices work together to create a single UI. (breadth and depth)
 
-#### Example:
-
-Amazon uses a micro frontend architecture to split up it's various web applications. Products page, wish list, and shopping cart are some examples of the independent micro frontend web applications amazon is assembling to create a singular UI.
+> #### Example:
+Amazon uses a micro frontend to split up it's various web applications. Products page, wish list, and shopping cart are all independent web applications Amazon assembles into a composite UI.
 
 ## Why use micro frontends?
 
@@ -24,32 +23,32 @@ Business:
 
 Code bases:
 
-* Less coupling (not everything together)
-* More reuse (more things using one thing)
-* Can have as many web apps as you want
+* Code reuse
+* Scaling number of code bases
 
 Teams:
 
-* Smaller and more focused teams
-* Not everyone working on one code base
-* Faster PR times due to easier reviews
-* Less risk of breaking things
-* Teams can choose what ever technology they want
-* Teams have more ownership due to clearer responsibility
+* Smaller-focused teams
+* Faster development
+* Less risk
+* Technology agnostic
+* Increased ownership
+
 
 ## When to use micro frontends?
 
-Micro front end architectures are a good fit for companies with a big frontend website that consists of many different parts working together and need to integrate, talk to, and share data with one another.
+Micro front end architectures are a good fit for developers with a big frontend code base that consists of many different parts that work together and need to integrate, talk to, and share data.
 
 ## Who should use micro frontends?
 
-You and your team! No really. There needs to be a bigger community around this and is great place to hop in to a tech. community.
+You and your team! Micro frontends are great place to give back to the tech community because there is not a enough people sharing their experiences in solving this common problem.
 
-How?
+## How to implement a micro frontend:
 
 There are many ways to solve this problem, yet few established solutions. 
 
-* A common approach is to route a user to a different website. For example: products.amazon.com might route to purchase.amazon.com, using a POST request to share the users shopping cart. 
+##### Route a user between websites:
+One hypothetical example would be that `products.amazon.com` might route to `purchase.amazon.com`, using a `POST` request to share the users shopping cart. 
 
 ![alt text](https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png)
 
