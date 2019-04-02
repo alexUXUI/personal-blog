@@ -1,71 +1,63 @@
 ---
 templateKey: blog-post
-title: 'Micro Frontends '
+title: 'Micro frontends '
 date: 2019-03-28T03:46:30.206Z
-description: Applying micro service design patterns to front end applications.
+description: Microservice design patterns applied to front end applications.
 tags:
   - micro frontend
 ---
+## What is a micro frontend?
 
-## What?
+A micro frontend is UI composed of microservices. Microservices encapsulate a specific domain of business functionality and each microservice is a self-contained web application made of html, css, and js. While being self-contained, microservices also work together to create a composite UI. (breadth and depth)
 
-It’s a UI built with micro services. Micro frontends are also called composite UIs.
+#### Example:
 
-![alt text](https://micro-frontends.org/ressources/diagrams/organisational/verticals-headline.png)
+Amazon uses a micro frontend architecture to split up it's various web applications. Products page, wish list, and shopping cart are some examples of the independent micro frontend web applications amazon is assembling to create a singular UI.
 
-#### Amazon Example: 
+## Why use micro frontends?
 
-Ever notice how Amazon.com’s website has a slightly different look and feel across different parts? It's because each part is a separate application, built by different team, using any given technology. 
+Business:
 
+* Easier feature adoption
+* Clearer lines of responsibility
+* More flexible, less buggy tech 
 
-## Why?
+Code bases:
 
-Scale Business:
+* Less coupling (not everything together)
+* More reuse (more things using one thing)
+* Can have as many web apps as you want
 
-- Easier feature adoption
-- Clearer lines of responsibility
-- More flexible technology 
+Teams:
 
-Scale frontend code bases:
+* Smaller and more focused teams
+* Not everyone working on one code base
+* Faster PR times due to easier reviews
+* Less risk of breaking things
+* Teams can choose what ever technology they want
+* Teams have more ownership due to clearer responsibility
 
-- Less coupling (not everything together)
-- More reuse (more things using one thing)
-- Can have as many web apps as you want
+## When to use micro frontends?
 
-Scale frontend teams:
+Micro front end architectures are a good fit for companies with a big frontend website that consists of many different parts working together and need to integrate, talk to, and share data with one another.
 
-- Smaller and more focused teams
-- Not everyone working on one code base
-- Faster PR times due to easier reviews
-- Less risk of breaking things
-- Teams can choose what ever technology they want
-- Teams have more ownership due to clearer responsibility
+## Who should use micro frontends?
 
-## When?
-
-Micro front end Architectures are a good fit for companies with front end applications that need to integrate, talk to, and share data with one another.
-
-Example use case:
-
-A big website that consists of many different parts working together
-
-Who?
-
-You and your team!
+You and your team! No really. There needs to be a bigger community around this and is great place to hop in to a tech. community.
 
 How?
 
 There are many ways to solve this problem, yet few established solutions. 
 
-- A common approach is to route a user to a different website. For example: products.amazon.com might route to purchase.amazon.com, using a POST request to share the users shopping cart. 
+* A common approach is to route a user to a different website. For example: products.amazon.com might route to purchase.amazon.com, using a POST request to share the users shopping cart. 
 
 ![alt text](https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png)
 
-- Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
+* Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
 
 ![alt text](https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png)
 
-- Use SSR to pull micro app code into a single index.html, depending on a URL route
+* Use SSR to pull micro app code into a single index.html, depending on a URL route
 
 ![alt text](https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png)
 
@@ -74,8 +66,9 @@ The approach we decided on was the third approach, to use SSR to append differen
 We started out a monolithic create react app that supports 3 domains of our business. 
 
 We split the monolith up into 4 distinct web applications:
-- 3 micro apps
-- 1 parent app (to help share state and routes between the micro apps)
+
+* 3 micro apps
+* 1 parent app (to help share state and routes between the micro apps)
 
 Each web application was made with react, redux, and react-router-4.
 
@@ -100,12 +93,3 @@ At this point a request is made to the node server for a different micro applica
 The node server build a new composite UI and delivers is back to the browser.
 
 (Diagram)
-
-
-
-
-
-
-
-
-
