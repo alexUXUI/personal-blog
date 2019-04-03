@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 'Micro frontends '
+title: Micro frontends
 date: 2019-03-28T03:46:30.206Z
 description: Microservice design patterns applied to front end applications.
 tags:
