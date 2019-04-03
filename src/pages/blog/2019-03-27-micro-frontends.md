@@ -8,39 +8,55 @@ tags:
 ---
 ## What is a micro frontend?
 
-A micro frontend is UI composed of microservices. Each microservice encapsulates a domain of business functionality and is a self-contained web application made of html, css, and js. While being independent, microservices work together to create a single UI. (breadth and depth)
+A micro frontend is UI composed of microservices. Each microservice encapsulates a domain of business functionality and is a self-contained web application made of html, css, and js. While being independent, microservices work together to create a single UI. 
 
 #### Example:
-Amazon uses a micro frontend to split up it's various web applications. Products, wish list, and shopping cart are all independent web applications Amazon assembles into a composite UI.
+Amazon uses a micro frontend architecture to split up its various web applications. Amazon products, wishlist, and shopping cart are all independent web applications assembled into one composite UI.
 
 ## Why use micro frontends?
 
-Businesses leveraging a micro frontend becomes more nimble due to less interdependence between teams, and the added flexibility allows for quicker feature iteration. Code quality improves because more code is reused. Less code makes apps easier to maintain, and add durability to the overall UI. Teams get smaller and faster. Each team can also choose their technology.
+Organizations leveraging micro frontend architectures become more nimble due to less interdependence between teams. The added agility allows for quicker feature iteration and code quality improves because more code is reused across microservices. Less code makes microservices easier to maintain, and adds durability to the overall UI. Teams also get smaller, faster, and have more ownership over their products.
 
 ## When to use micro frontends?
 
-Micro front end architectures are a good fit for developers with a big frontend code base that consists of many different parts that work together and need to integrate, talk to, and share data.
+Micro front end architectures are a good fit for developers with a big frontend code base that consists of discrete parts that need to integrate, talk to, and share data.
 
 ## Who should use micro frontends?
 
-You and your team! Micro frontends are great place to give back to the tech. community because there is not a enough people sharing their experiences with solving this common problem.
+You and your team! Microfrontends are great place to give back to the community because there are not a enough people sharing their experiences.
 
 ## How to implement a micro frontend:
 
-There are many ways to solve this problem, yet few established solutions. 
+There are many ways to solve this problem, yet few established solutions. Let's look at three of the more common design patterns.
 
-##### Route between websites:
-One hypothetical micro frontend implementation would be for one website to route to a totally different website. For example: `products.amazon.com` might route a user to `purchase.amazon.com`, using a `POST` request to share the shopping cart. 
+#### Routing between subdomains:
 
-<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example"/>
+This technique allows developers to split frontend code into microservices at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. 
 
-* Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
+<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
-![alt text](https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png)
+<br />
+<br />
 
-* Use SSR to pull micro app code into a single index.html, depending on a URL route
+#### Web Components
 
-![alt text](https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png)
+Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s microfrontend is Iframe based.
+
+
+<img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
+
+<br />
+<br />
+
+#### Server Side Rendering
+
+Servers can be used to fetch html/js/css files from an S3 bucket, add those files to a DOM, and serve a single index.html page. In this example, the user requests a route of `/app-3` and the handler for this route fetches html/css/js content from an S3 bucket, adds the contents to an index file
+
+<img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
+
+
+<br />
+<br />
 
 The approach we decided on was the third approach, to use SSR to append different micro apps into the same DOM.
 
