@@ -33,23 +33,27 @@ There are many ways to solve this problem, yet few established solutions. Let's 
 
 This technique allows developers to split frontend code into microservices at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. 
 
-<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 250px"/>
+<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 <br />
 <br />
 
 #### Web Components
 
-Web Components (or Iframes) can also be used to append html/css/js applications to the same DOM. Spotify’s microfrontend is Iframe based -- thanks to Dazn Engineering for that piece of information.
+Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s microfrontend is Iframe based.
 
-<img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 250px"/>
+
+<img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 <br />
 <br />
 
-3) **Server Side Rendering**: Servers can be used to fetch html/js/css files from an S3 bucket, add those files to the same DOM and serve a single index.html page. 
+#### Server Side Rendering
 
-<img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 250px"/>
+Servers can be used to fetch html/js/css files from an S3 bucket, add those files to a DOM, and serve a single index.html page. In this example, the user requests a route of `/app-3` and the handler for this route fetches html/css/js content from an S3 bucket, adds the contents to an index file
+
+<img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
+
 
 <br />
 <br />
