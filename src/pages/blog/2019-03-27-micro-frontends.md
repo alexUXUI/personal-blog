@@ -27,20 +27,31 @@ You and your team! Micro frontends are great place to give back to the tech. com
 
 ## How to implement a micro frontend:
 
-There are many ways to solve this problem, yet few established solutions. 
+There are many ways to solve this problem, yet few established solutions. Let's look at three of the more common approaches.
 
-##### Route between websites:
-One hypothetical micro frontend implementation would be for one website to route to a totally different website. For example: `products.amazon.com` might route a user to `purchase.amazon.com`, using a `POST` request to share the shopping cart. 
+1) Route between Subdomains. (left diagram) 
 
-<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example"/>
+2) Web Components / Iframes. (middle diagram)
 
-* Another approach could be to have three different web components or IFrames append three different js applications to the same DOM. (Spotify’s micro front end is IFame based)
+3) Server Side Rendering. (right diagram) 
 
-![alt text](https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png)
+<br />
+<div style="display: flex">
+<img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 250px"/>
+<img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 250px"/>
+<img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 250px"/>
+</div>
+<br />
+<br />
 
-* Use SSR to pull micro app code into a single index.html, depending on a URL route
+1) **Routing between subdomains**:
+This technique allows developers to split frontend code into microservices at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. 
 
-![alt text](https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png)
+
+2) **Web Components**: Web components (or Iframes) can also be used to append different html/css/js applications to the same DOM. Spotify’s micro frontend is Iframe based -- thanks to Dazn Engineering for that piece of information.
+
+
+3) **Server Side Rendering**: Servers can be used to fetch html/js/css files from an S3 bucket, add those files to the same DOM and serve a single index.html page. 
 
 The approach we decided on was the third approach, to use SSR to append different micro apps into the same DOM.
 
