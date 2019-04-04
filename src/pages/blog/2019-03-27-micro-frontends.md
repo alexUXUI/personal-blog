@@ -6,6 +6,9 @@ description: Microservice design patterns applied to front end applications.
 tags:
   - micro frontend
 ---
+<br />
+<br />
+
 ## What is a micro frontend:
 
 A micro frontend is a UI composed of multiple frontend applications. These frontend applications are generally referred to as "micro" applications because they are modeled on the single responsibility principal of microservices. A micro frontend is what emerges when all of the micro applications work together to form a seamless UI.
@@ -28,38 +31,38 @@ You and your team! Micro frontends are great place to give back to the community
 
 ## How to implement a micro frontend:
 
-There are many ways to solve this problem, yet few established solutions. While it is relatively easy to have fragmented codebases, the crux of the problem is bringing the independent applications together. The "stitching" layer of a micro frontend must be able to load the correct micro app configuration and provide a way for micro apps to communicate and share state.
-
-With this information in mind, Let's look at three of the more common design patterns.
+There are many ways to solve this problem, yet few established solutions. While it is relatively easy to have fragmented codebases, the crux of the problem is bringing the independent applications together. The "stitching" layer of a micro frontend must be able to load the correct micro app configuration and provide a way for micro apps to communicate and share state. With this information in mind, Let's look at three of the more common design patterns.
 
 #### 1) Routing between subdomains:
-
-This technique allows developers to split frontend monoliths into micro apps at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. While being low effort, the drawback of this approach is that it does not satisfy the requirements of a true micro frontend. A true microfront end should allow for the possibility that multiple micro applications be in the UI  _simultaneously_.
 
 <img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 <br />
 <br />
 
+This technique allows developers to split frontend monoliths into micro apps at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. While being low effort, the drawback of this approach is that it does not satisfy the requirements of a true micro frontend. A true microfront end should allow for the possibility that multiple micro applications be in the UI  _simultaneously_.
+
 #### 2) Web Components
-
-Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s micro frontend is Iframe based.
-
 
 <img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 <br />
 <br />
 
-#### 3) Server Side Rendering
+Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s micro frontend is Iframe based.
 
-Servers can be used to fetch html/js/css files from an S3 bucket, add those files to a DOM, and serve a single index.html page. In this example, the user requests a route of `/app-3` and the handler for this route fetches html/css/js content from an S3 bucket, adds the contents to an index file
+
+
+
+#### 3) Server Side Rendering
 
 <img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 
 <br />
 <br />
+
+Servers can be used to fetch html/js/css files from an S3 bucket, add those files to a DOM, and serve a single index.html page. In this example, the user requests a route of `/app-3` and the handler for this route fetches html/css/js content from an S3 bucket, adds the contents to an index file
 
 The approach we decided on was the third approach, to use SSR to append different micro apps into the same DOM.
 
