@@ -24,7 +24,7 @@ Organizations leveraging micro frontend architectures are more nimble due to les
 
 Micro front end architectures are a good fit for teams with a large frontend code base that is made up of, or can be split into discrete sections of functionality. 
 
-## Who should use micro frontends?
+## Who should use micro frontends:
 
 You and your team! Micro frontends are great place to give back to the community because there are not a enough people sharing their experiences with this design pattern.
 
