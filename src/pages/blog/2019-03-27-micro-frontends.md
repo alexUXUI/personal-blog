@@ -6,8 +6,7 @@ description: Microservice design patterns applied to front end applications.
 tags:
   - micro frontend
 ---
-<br />
-<br />
+
 
 ## What is a micro frontend:
 
