@@ -14,13 +14,13 @@ export default class IndexPage extends React.Component {
       <Layout>
         <section className="section">
           <div className="container">
-            <div className="content">
+            <div>
               <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
             </div>
             {posts.map(({ node: post }) => (
               <div
                 className="content"
-                style={{ padding: '2em 4em' }}
+                style={{ padding: '2em 0 0 0' }}
                 key={post.id}
               >
                 <p>

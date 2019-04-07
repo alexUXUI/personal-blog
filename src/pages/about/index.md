@@ -4,7 +4,7 @@ path: /about
 title: About me
 ---
 
-### Software Engineering
+## Software Engineering
 
 5 years experience building complex web applications.
 
@@ -12,14 +12,14 @@ title: About me
 
 3 years experience in product design roles.
 
-### Team building
+#### Team building
 
 Bringing out the best in people with trust, appreciation, and radical candor.
 
-### Product Development
+#### Product Development
 
 3 years experience in product development roles.
 
-### Developer Operations
+#### Developer Operations
 
 2 years in developer operations roles.
