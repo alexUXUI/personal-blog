@@ -32,11 +32,9 @@ You and your team! Micro frontends are great place to give back to the community
 
 There are many ways to solve this problem, yet few established solutions. While it is relatively easy to have fragmented codebases, the crux of the problem is bringing the independent applications together. The "stitching" layer of a micro frontend must be able to load the correct micro app configuration and provide a way for micro apps to communicate and share state. With this information in mind, Let's look at three of the more common design patterns.
 
-
-<section class="example">
-
 #### 1) Routing between subdomains:
-
+<br>
+<section class="example">
 <img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
 <br />
