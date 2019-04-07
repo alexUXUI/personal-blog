@@ -34,6 +34,7 @@ There are many ways to solve this problem, yet few established solutions. While 
 
 
 <section class="example">
+
 #### 1) Routing between subdomains:
 
 <img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
@@ -45,6 +46,7 @@ This technique allows developers to split frontend monoliths into micro apps at 
 </section>
 
 <section class="example">
+
 #### 2) Web Components
 
 <img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
@@ -56,6 +58,7 @@ Web Components (or Iframes) can also be used to add multiple, independent html/c
 </section>
 
 <section class="example">
+
 #### 3) Server Side Rendering
 
 <img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
