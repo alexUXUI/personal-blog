@@ -33,7 +33,7 @@ You and your team! Micro frontends are great place to give back to the community
 There are many ways to solve this problem, yet few established solutions. While it is relatively easy to have fragmented codebases, the crux of the problem is bringing the independent applications together. The "stitching" layer of a micro frontend must be able to load the correct micro app configuration and provide a way for micro apps to communicate and share state. With this information in mind, Let's look at three of the more common design patterns.
 
 
-<section>
+<section class="example">
 #### 1) Routing between subdomains:
 
 <img src="https://i.ibb.co/tMchN7w/Screen-Shot-2019-03-27-at-11-56-09-PM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
@@ -44,7 +44,7 @@ There are many ways to solve this problem, yet few established solutions. While 
 This technique allows developers to split frontend monoliths into micro apps at the subdomain level. Subdomains make it easy for teams to have independently maintained codebases under one domain. Example: `amazon.com` might route a user to `primenow.amazon.com`, using a `POST` request to share the user's shopping cart. While being low effort, the drawback of this approach is that it does not satisfy the requirements of a true micro frontend. A true microfront end should allow for the possibility that multiple micro applications be in the UI  _simultaneously_.
 </section>
 
-<section>
+<section class="example">
 #### 2) Web Components
 
 <img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
@@ -55,7 +55,7 @@ This technique allows developers to split frontend monoliths into micro apps at 
 Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s micro frontend is Iframe based.
 </section>
 
-<section>
+<section class="example">
 #### 3) Server Side Rendering
 
 <img src="https://i.ibb.co/L56fqB1/Screen-Shot-2019-03-28-at-12-28-51-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
