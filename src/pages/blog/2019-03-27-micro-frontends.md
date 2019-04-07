@@ -43,7 +43,9 @@ This technique allows developers to split frontend monoliths into micro apps at 
 <section class="example">
 <img src="https://i.ibb.co/mvGtDMc/Screen-Shot-2019-03-28-at-12-07-15-AM.png" class="post-example" style="height: 300px; margin: auto; width: 100%; object-fit: contain"/>
 
+<p>
 Web Components (or Iframes) can also be used to add multiple, independent html/css/js applications to the same DOM. Spotify’s micro frontend is Iframe based.
+</p>
 </section>
 
 #### 3) Server Side Rendering
