@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Micro frontends
+title: Micro Frontends
 date: 2019-03-28T03:46:30.206Z
 description: Microservice design patterns applied to front end applications.
 tags:
@@ -13,7 +13,7 @@ tags:
 A micro frontend is a UI composed of multiple frontend applications. These frontend applications are generally referred to as "micro" applications because they are modeled on the single responsibility principal of microservices. A micro frontend is what emerges when all of the micro applications work together to form a seamless UI.
 
 
-#### Hypothetical Example:
+### Hypothetical Example:
 In theory, Amazon might be using a micro frontend architecture to split up its various web applications. Amazon products, wishlist, and shopping cart could all be independent web applications assembled into one composite UI.
 
 ## Why use micro frontends:
