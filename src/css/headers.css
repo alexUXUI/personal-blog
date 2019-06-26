@@ -27,6 +27,7 @@ h1 {
   padding: 10px 0 20px 0;
   border: 1px solid #dfdfeb;
   border-radius: 6px;
+  box-shadow: 0px 1px 24px -11px rgba(0, 0, 0, 0.15);
 }
 
 nav {
@@ -41,7 +42,13 @@ nav {
 }
 
 .content h1 {
-  margin-top: .25em;
+  /* margin-top: .025em; */
+}
+
+.title.is-size-2.has-text-weight-bold.is-bold-light+p {
+  color: #7880a1;
+  font-size: 1.25em;
+  font-style: italic
 }
 
 @media screen and (min-width: 769px) {
