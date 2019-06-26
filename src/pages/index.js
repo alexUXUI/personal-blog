@@ -12,11 +12,12 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <div className='latest'>
+          <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+        </div>
+
         <section className="section">
           <div className="container">
-            <div>
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
             {posts.map(({ node: post }) => (
               <div
                 className="content"

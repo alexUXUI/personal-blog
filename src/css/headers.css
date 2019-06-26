@@ -7,11 +7,22 @@
 .content h3,
 .content h4 {
   line-height: unset !important;
-  margin-bottom: .15em !important;
+  /* margin-bottom: .15em !important; */
 }
 
 h1 {
-  color: #656c88 !important
+
+  color: #52586e !important
+}
+
+.latest {
+  max-width: 750px;
+  margin: auto;
+  padding: 0 1em 0 1em;
+}
+
+.latest .has-text-weight-bold.is-size-2 {
+  margin: 1em 0 0 0;
 }
 
 .content h2 {
@@ -117,29 +128,33 @@ h4 {
   margin-top: 1.5em !important;
 }
 
+.column {
+  margin: 1em;
+}
+
 h2 {
-  color: #37474Feb !important;
+  color: #656c88 !important;
   font-weight: 500 !important;
 }
 
 h3 {
-  color: #455A64eb !important;
+  color: #727a98 !important;
   font-weight: 400 !important;
 }
 
 h4 {
-  color: #546E7Aeb !important;
+  color: #646b88ba !important;
   font-weight: 300 !important;
   margin-top: 2em;
 }
 
 h5 {
-  color: #607D8Beb !important;
+  color: #646b88ba !important;
   font-weight: 200;
 }
 
 h6 {
-  color: #78909Ceb !important;
+  color: #646b88ba !important;
 }
 
 p {
@@ -172,10 +187,6 @@ p {
 }
 
 @media screen and (max-width: 750px) {
-  .content {
-    padding: 0 !important;
-  }
-
   p {
     max-width: unset;
     width: 100%;
@@ -204,7 +215,18 @@ p {
   /* text-indent: 15px; */
 }
 
+a.has-text-primary {
+  color: #646b88ba !important;
+}
+
+
 a.has-text-primary:hover,
 a.has-text-primary:focus {
   color: #656c88 !important
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    padding: 1em !important;
+  }
 }
