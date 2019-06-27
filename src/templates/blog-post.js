@@ -14,19 +14,23 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  readingTime,
+  date
 }) => {
   const PostContent = contentComponent || Content
 
   return (
     <section className="section">
       {helmet || ''}
+      <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+        {title}
+      </h1>
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+
             <p>{description}</p>
+            <p>{date} | <span style={{ color: '#585858' }}>{readingTime}</span></p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -57,6 +61,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
+  console.log(data)
 
   return (
     <Layout>
@@ -74,6 +79,8 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        readingTime={post.fields.readingTime.text}
+        date={post.frontmatter.date}
       />
     </Layout>
   )
@@ -97,6 +104,12 @@ export const pageQuery = graphql`
         title
         description
         tags
+      }
+      fields {
+        slug
+        readingTime {
+          text
+        }
       }
     }
   }

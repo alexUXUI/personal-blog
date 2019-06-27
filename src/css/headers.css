@@ -18,12 +18,13 @@ h1 {
 .latest {
   max-width: 750px;
   margin: auto;
-  padding: 0 1em 0 1em;
+  padding: 0 !important;
 }
 
 .latest .has-text-weight-bold.is-size-2 {
-  margin: 1em 0 0 0;
+  margin: .5em 0 -.5em 0;
 }
+
 
 .content h2 {
   font-size: 1.6em;
@@ -76,7 +77,7 @@ label {
 
 .navbar-item {
   font-family: 'Gotham Narrow Medium';
-  color: #37474Feb !important;
+  color: #52586e !important;
   font-weight: 200 !important;
   /* font-size: 18px */
 }
@@ -166,14 +167,25 @@ p {
 
 }
 
+hr {
+  border-top: 1px solid #fafbff;
+  margin: 1em 0 1em 0;
+}
+
+.post__utils {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+  height: 40px;
+}
+
 .button.is-small {
   background: white;
   color: #555555;
   padding: 1em;
-  height: 50px;
   font-size: 15px;
-  /* font-weight: 300; */
-  /* font-family: 'Gotham Narrow Bold'; */
   max-width: 170px;
   border: 1px solid #d9dce6;
   border-radius: 4px;
@@ -199,8 +211,13 @@ p {
   margin: auto
 }
 
+.content {
+  padding-top: 1em !important;
+}
+
 .container {
   max-width: 750px;
+  padding: unset !important
 }
 
 @media screen and (min-width: 1280px) {
@@ -216,16 +233,28 @@ p {
 }
 
 a.has-text-primary {
-  color: #646b88ba !important;
+
+  color: #656c88 !important
 }
 
 
 a.has-text-primary:hover,
 a.has-text-primary:focus {
-  color: #656c88 !important
+  color: #646b88ba !important;
 }
 
 @media screen and (max-width: 750px) {
+  .content {
+    padding: 1em !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .section {
+    padding: .25em !important;
+  }
+
   .content {
     padding: 1em !important;
   }

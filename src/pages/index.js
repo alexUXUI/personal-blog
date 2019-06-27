@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import { kebabCase } from 'lodash'
 import '../css/headers.css'
 import '../css/stylesheet.css'
 
@@ -9,6 +10,7 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    console.log(posts);
 
     return (
       <Layout>
@@ -21,24 +23,37 @@ export default class IndexPage extends React.Component {
             {posts.map(({ node: post }) => (
               <div
                 className="content"
-                style={{ padding: '2em 0 0 0' }}
                 key={post.id}
               >
                 <p>
                   <Link className="has-text-primary" to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
+                  <br />
+                  <hr role="div" />
+                  <small>{post.frontmatter.date} </small>
                 </p>
                 <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Full Story
-                  </Link>
+                  {post.excerpt} | {post.fields.readingTime.text}
                 </p>
+                <p>
+                  <div className='post__utils'>
+                    <Link className="button is-small" to={post.fields.slug}>
+                      Full Story
+                  </Link>
+                    <div>
+                      Tags: &nbsp;
+                      {
+                        post.frontmatter.tags.map(tag => {
+                          return (
+                            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                          )
+                        })
+                      }
+                    </div>
+                  </div>
+                </p>
+
               </div>
             ))}
           </div>
@@ -68,11 +83,15 @@ export const pageQuery = graphql`
           id
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            tags
           }
         }
       }
