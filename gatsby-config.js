@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description: 'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    title: 'Alex Bennett',
+    description: 'Personal Site',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: "GTM-NKHFR3L",
+        id: 'GTM-NKHFR3L',
 
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
@@ -72,8 +72,8 @@ module.exports = {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
               destinationDir: 'static',
-            }
-          }
+            },
+          },
         ],
       },
     },
@@ -86,7 +86,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
+        develop: true, // Activates purging in npm run develop
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins

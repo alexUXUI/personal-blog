@@ -10,21 +10,18 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-    console.log(posts);
+    console.log(posts)
 
     return (
       <Layout>
-        <div className='latest'>
+        <div className="latest">
           <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
         </div>
 
         <section className="section">
           <div className="container">
             {posts.map(({ node: post }) => (
-              <div
-                className="content"
-                key={post.id}
-              >
+              <div className="content" key={post.id}>
                 <p>
                   <Link className="has-text-primary" to={post.fields.slug}>
                     {post.frontmatter.title}
@@ -37,23 +34,18 @@ export default class IndexPage extends React.Component {
                   {post.excerpt} | {post.fields.readingTime.text}
                 </p>
                 <p>
-                  <div className='post__utils'>
+                  <div className="post__utils">
                     <Link className="button is-small" to={post.fields.slug}>
                       Full Story
-                  </Link>
+                    </Link>
                     <div>
                       Tags: &nbsp;
-                      {
-                        post.frontmatter.tags.map(tag => {
-                          return (
-                            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                          )
-                        })
-                      }
+                      {post.frontmatter.tags.map((tag) => {
+                        return <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      })}
                     </div>
                   </div>
                 </p>
-
               </div>
             ))}
           </div>
@@ -66,9 +58,9 @@ export default class IndexPage extends React.Component {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 }
 
 export const pageQuery = graphql`

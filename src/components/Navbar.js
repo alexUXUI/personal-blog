@@ -13,7 +13,7 @@ const Navbar = class extends React.Component {
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
       // Add a click event on each of them
-      $navbarBurgers.forEach(el => {
+      $navbarBurgers.forEach((el) => {
         el.addEventListener('click', () => {
           // Get the target from the "data-target" attribute
           const target = el.dataset.target
@@ -29,11 +29,7 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
+      <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
@@ -51,15 +47,9 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-              {/* <Link className="navbar-item" to="/products">
-                Products
-              </Link> */}
               <Link className="navbar-item" to="/contact">
                 Contact
               </Link>
-              {/* <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link> */}
             </div>
             <div className="navbar-end has-text-centered">
               <a

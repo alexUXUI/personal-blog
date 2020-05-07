@@ -7,7 +7,6 @@
 .content h3,
 .content h4 {
   line-height: unset !important;
-  /* margin-bottom: .15em !important; */
 }
 
 h1 {
@@ -16,7 +15,6 @@ h1 {
 }
 
 .latest {
-  max-width: 750px;
   margin: auto;
   padding: 0 !important;
 }
@@ -79,12 +77,9 @@ label {
   font-family: 'Gotham Narrow Medium';
   color: #52586e !important;
   font-weight: 200 !important;
-  /* font-size: 18px */
 }
 
 h1 {
-  /* font-family: 'Noe Black'; */
-  max-width: 700px !important;
   margin: auto;
   font-weight: bolder;
   font-family: 'Gotham Bold'
@@ -114,10 +109,7 @@ h3,
 h4,
 h5,
 h6 {
-  max-width: 700px;
   margin: auto;
-  /* font-family: 'Noe Regular' !important; */
-
   font-family: 'Gotham M';
 }
 
@@ -159,12 +151,9 @@ h6 {
 }
 
 p {
-  max-width: 700px;
   margin: auto;
   font-family: 'Gotham Narrow Book';
   font-size: 18px;
-  /* font-family: 'Gotham Book'; */
-
 }
 
 hr {
@@ -198,14 +187,6 @@ hr {
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
 }
 
-@media screen and (max-width: 750px) {
-  p {
-    max-width: unset;
-    width: 100%;
-    background: white;
-  }
-}
-
 .content .taglist {
   max-width: 650px;
   margin: auto
@@ -215,22 +196,8 @@ hr {
   padding-top: 1em !important;
 }
 
-.container {
-  max-width: 750px;
-  padding: unset !important
-}
 
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 750px;
-    width: 1152px;
-  }
-}
 
-.content p:not(:last-child),
-.content ul:not(:last-child) {
-  /* text-indent: 15px; */
-}
 
 a.has-text-primary {
 
@@ -258,4 +225,56 @@ a.has-text-primary:focus {
   .content {
     padding: 1em !important;
   }
+}
+
+/**
+tech exp
+*/
+
+.tech-exp {
+  /* margin-top: -40px */
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.banner h1 {
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  padding: 0 20px 0 20px;
+}
+
+p {
+  margin: unset !important
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.tag-line {
+  display: flex;
+
+}
+
+.tag-line p {
+  white-space: nowrap;
+  align-self: center;
 }
