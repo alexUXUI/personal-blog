@@ -62,7 +62,7 @@ const TemplateWrapper = ({ children }) => (
               <p>
                 &nbsp;&nbsp;I was born and raised in Denver, Colorado and have lived in Los Angeles,
                 Medellín, and Rio de Janeiro. I have also traveled around S.E. Asia, S. Africa, and
-                W. Europe as well.
+                W. Europe.
               </p>
               <br />
               <p>
@@ -71,18 +71,17 @@ const TemplateWrapper = ({ children }) => (
               </p>
               <br />
               <p>
-                &nbsp;&nbsp;Technology has always fascinated me from an art perspective because it
-                allows us to combine different medias in new and exciting ways. I truly believe that
-                in the information age, artists have a major role to play in shaping our
-                understanding of vasts amount of information through color, sounds, lines, words and
-                countless forms of expression.
+                &nbsp;&nbsp;Technology fascinates me from an art perspective because it allows us to
+                combine different medias in new ways. I believe that in the information age, artists
+                have a major role to play in shaping our understanding of vasts amount of
+                information.
               </p>
               <br />
               <p>
                 &nbsp;&nbsp;During my undergrad in Diplomacy and World Affairs at Occidental
                 College, I studied the role technology can play in the formation of public policy
-                (local, federal, and international) and realized that technology can be a very
-                effective way of making a positive difference in the world.
+                and I realized that technology can be a very effective way of making a positive
+                difference in the world.
               </p>
               <h3>Technology Experience</h3>
               <br />
@@ -94,24 +93,27 @@ const TemplateWrapper = ({ children }) => (
               </p>
               <br />
               <p>
-                &nbsp;&nbsp;My 7 year professional career has solely revolved around creating
-                software. Along the way, I have had the privilege of working on software with people
-                in many different capacities. I have had roles in software production including:
-                Software Engineer, UX/UI Designer, Product Manager, Scrum Master, and DevOps.
+                &nbsp;&nbsp;My 7 year professional career has revolved around creating software.
+                Along the way, I have had the privilege of building software with people in many
+                capacities. I have had roles in software production including: Software Engineer,
+                UX/UI Designer, Product Manager, Scrum Master, and DevOps. No matter what role I'm
+                in, I try to stay true to the mentality of full-cycle software operations.
               </p>
               <p>
-                &nbsp;&nbsp;I've also had the pleasure of working with many different teams, on
-                different products, written in different languages, within different industries. I
-                have also contracted, worked full-time, and even co-founded a tech. company.
+                &nbsp;&nbsp;In my experience, I have also had the pleasure of working alongside an
+                assortment of teams, on different products, using a variety of tools, within
+                different industries. I have also contracted, worked full-time, and even co-founded
+                a tech. company, we failed spectacularly, and the experience is still one of my
+                biggest accomplishments.
               </p>
               <p>
-                &nbsp;&nbsp;Over the course of working on these different projects, I began to
-                specialize in frontend web development. I was most recently a UI Architect for a 9
-                billion dollar company called Atlas Corporation, where I was responsible for all
-                things related to our frontend codebase: quality, performance, accessibility,
-                design, security, and DevOps. I also built a microfrontend architecture for this
-                company to extend the benefits of domain driven design and microservice
-                architectures to the fontend.
+                &nbsp;&nbsp;Over the course of working on a range of projects, I began to specialize
+                in frontend web development. I was most recently a UI Architect for a 9 billion
+                dollar company called Atlas Corporation, where I was responsible for all things
+                related to our frontend codebase: quality, performance, accessibility, design,
+                security, and DevOps. I also built a microfrontend architecture for this company to
+                extend the benefits of domain driven design and microservice architectures to the
+                frontend.
               </p>
             </div>
             <div className="container tech-exp">
